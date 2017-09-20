@@ -23,6 +23,7 @@ class EscolasController < ApplicationController
   def delete
     delete_update do
       @escola.destroy
+      console.log "PINTO"
       head :no_content
     end
   end
