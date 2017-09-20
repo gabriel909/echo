@@ -24,7 +24,6 @@ class EscolasController < ApplicationController
     delete_update do
       @escola = Escola.find params[:id]
       @escola.destroy
-      console.log "PINTO"
       head :no_content
     end
   end

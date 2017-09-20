@@ -31,5 +31,5 @@ Rails.application.routes.draw do
   delete '/escolas/:id', to: 'escolas#delete'
 
   #DELETE Aluno
-  delete '/alunos/:id', to: 'alunos#delete'
+  # delete '/alunos/:id', to: 'alunos#delete'
 end
