@@ -1,5 +1,5 @@
 class EscolasController < ApplicationController
-  before_action :set_escola, only: [:show, :delete, :update]
+  before_action :set_escola, only: [:show, :update]
 
   #POST
   #GET escolas
@@ -22,6 +22,7 @@ class EscolasController < ApplicationController
 
   def delete
     delete_update do
+      @escola = Escola.find params[:id]
       @escola.destroy
       console.log "PINTO"
       head :no_content
