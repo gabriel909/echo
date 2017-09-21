@@ -2,17 +2,18 @@ class EscolasController < ApplicationController
   before_action :set_escola, only: [:show, :update]
 
   #POST
-  #GET escolas
+  #GET /escolas
   def index
     @escolas = Escola.all
     json_response @escolas
   end
 
-  #GET escolas with id
+  #GET /escolas/select
   def show
     json_response @escola
   end
 
+  #POST /escolas/signup
   def create
     @escola = Escola.create! escola_params
     #TODO Auth token
@@ -20,6 +21,7 @@ class EscolasController < ApplicationController
     json_response @escola
   end
 
+  #DELETE /escolas/:id
   def delete
     delete_update do
       @escola = Escola.find params[:id]
@@ -28,6 +30,7 @@ class EscolasController < ApplicationController
     end
   end
 
+  #PUT /escolas/:id
   def update
     delete_update do
       @escola.update escola_params

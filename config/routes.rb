@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   #GET Alunos
   get '/alunos', to: 'alunos#index'
 
+  #GET Avisos
+  get '/escolas/:escola_id/avisos', to: 'avisos#index'
+
   #GET Aluno with id
   get '/alunos/select/:id', to: 'alunos#show'
 
@@ -18,6 +21,9 @@ Rails.application.routes.draw do
 
   #POST Aluno signup
   post '/alunos/signup', to: 'alunos#create'
+
+  #POST Avisos
+  post '/escolas/:escola_id/avisos', to: 'avisos#create'
 
   #PUT
   #PUT Escola id

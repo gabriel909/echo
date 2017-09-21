@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920212612) do
+ActiveRecord::Schema.define(version: 20170921212611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,20 +20,32 @@ ActiveRecord::Schema.define(version: 20170920212612) do
     t.string "descrição"
     t.string "series"
     t.string "imagem"
+    t.bigint "escola_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["escola_id"], name: "index_avisos_on_escola_id"
   end
 
   create_table "escolas", force: :cascade do |t|
     t.string "nome"
-    t.string "CNPJ"
+    t.string "cnpj"
     t.string "email"
     t.string "password_digest"
     t.string "unidade"
+    t.bigint "aviso_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "aviso_id"
     t.index ["aviso_id"], name: "index_escolas_on_aviso_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string "categoria"
+    t.string "descrição"
+    t.string "status"
+    t.string "images", default: [], array: true
+    t.string "videos", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "escolas", "avisos"

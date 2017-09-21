@@ -5,6 +5,7 @@ class CreateAvisos < ActiveRecord::Migration[5.1]
       t.string :descrição
       t.string :series
       t.string :imagem
+      t.belongs_to :escola, index: true
 
       t.timestamps
     end
