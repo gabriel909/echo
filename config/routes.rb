@@ -10,10 +10,15 @@ Rails.application.routes.draw do
   get '/escolas/:escola_id/avisos', to: 'avisos#index'
 
   #GET Aluno with id
-  get '/alunos/select/:id', to: 'alunos#show'
+  get '/alunos/:id', to: 'alunos#show'
 
   #GET Escolas with id
-  get '/escolas/select', to: 'escolas#show'
+  get '/escolas/:nome/:unidade', to: 'escolas#show'
+
+  #GET reports from aluno with id
+  get '/alunos/reports/:id/', to: 'alunos#show_reports'
+
+  get '/alunos/:aluno_id/reports/:id', to: 'reports#show'
 
   #POST
   #POST Escola signup

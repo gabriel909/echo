@@ -3,7 +3,7 @@ class AvisosController < ApplicationController
 
   #GET /avisos
   def index
-    json_response @escolas.avisos
+    json_response @escola.aviso
   end
 
   # POST /escolas/:escola_id/avisos
