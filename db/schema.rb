@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921221846) do
+ActiveRecord::Schema.define(version: 20170922003318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 20170921221846) do
 
   create_table "avisos", force: :cascade do |t|
     t.string "titulo"
-    t.string "descrição"
     t.string "series"
     t.string "imagem"
     t.bigint "escola_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "descricao"
     t.index ["escola_id"], name: "index_avisos_on_escola_id"
   end
 
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20170921221846) do
 
   create_table "reports", force: :cascade do |t|
     t.string "categoria"
-    t.string "descrição"
     t.string "status"
     t.string "images", default: [], array: true
     t.string "videos", default: [], array: true
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170921221846) do
     t.bigint "aluno_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "descricao"
     t.index ["aluno_id"], name: "index_reports_on_aluno_id"
     t.index ["escola_id"], name: "index_reports_on_escola_id"
   end
