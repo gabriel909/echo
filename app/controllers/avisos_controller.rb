@@ -1,18 +1,16 @@
 class AvisosController < ApplicationController
   before_action :set_escola
 
-  #GET /avisos
+  #GET /escolas/:escola_id/avisos
   def index
     json_response @escola.aviso
   end
 
   # POST /escolas/:escola_id/avisos
   def create
-    puts "ID ID ID #{params[:escola_id]}"
-    @escola.aviso.create! aviso_params
-    json_response @escola.aviso
+    @aviso = @escola.aviso.create! aviso_params
+    json_response @aviso
   end
-
 
   private
 
@@ -21,7 +19,6 @@ class AvisosController < ApplicationController
   end
 
   def set_escola
-    puts "SET ESCOLA"
     @escola = Escola.find params[:escola_id]
   end
 
