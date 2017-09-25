@@ -32,6 +32,7 @@ class AlunosController < ApplicationController
   def delete
     delete_update do
       @aluno.destroy
+      head :no_content
     end
   end
 
@@ -56,7 +57,12 @@ class AlunosController < ApplicationController
   end
 
   def delete_update
-    #TODO
-    yield
+    if @aluno.id == @current_aluno.id
+      yield
+
+    else
+      raise ExceptionHandler::UnauthorizedAction, Message.unauthorized_action
+
+    end
   end
 end

@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170925174927) do
 
   create_table "avisos", force: :cascade do |t|
     t.string "titulo"
+    t.string "descrição"
     t.string "series"
     t.string "imagem"
     t.bigint "escola_id"
