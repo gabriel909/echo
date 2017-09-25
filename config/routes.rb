@@ -28,8 +28,14 @@ Rails.application.routes.draw do
   #POST Escola signup
   post '/escolas/signup', to: 'escolas#create'
 
+  #POST Escola login
+  post 'escolas/login', to: 'authentication#authenticate_escola'
+
   #POST Aluno signup
   post '/escolas/:escola_id/alunos/signup', to: 'alunos#create'
+
+  #POST Aluno login
+  post '/alunos/login', to: 'authentication#authenticate_aluno'
 
   #POST Avisos
   post '/escolas/:escola_id/avisos', to: 'avisos#create'

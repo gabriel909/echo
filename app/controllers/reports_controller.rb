@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_aluno, only: [:create]
+  before_action :authorize_request_aluno
 
   # POST /escolas/:escola_id/alunos/:aluno_id/denuncias
   def create
