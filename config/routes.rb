@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   post '/escolas/:escola_id/avisos', to: 'avisos#create'
 
   # POST Denuncias
-  post '/escolas/:escola_id/alunos/:aluno_id/denuncias', to: 'reports#xaxando'
+  post '/escolas/:escola_id/alunos/:aluno_id/denuncias', to: 'reports#create'
 
   #PUT
   #PUT Escola id
