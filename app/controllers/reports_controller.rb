@@ -4,24 +4,23 @@ class ReportsController < ApplicationController
 
   # POST /escolas/:escola_id/alunos/:aluno_id/denuncias
   def create
-    imagesArray = params[:image].to_a
-    imagesURLs = []
+    images_array = params[:image].to_a
+    videos_array = params[:video].to_a
     report = @aluno.report.create! report_params
 
-    imagesArray.each do |elem|
-      imageAux = report.image.create! base64Data: elem
-      imagesURLs.push(imageAux.base64Data)
+    images_array.each do |elem|
+      report.image.create! base64Data: elem
     end
 
-    puts "url: #{imagesURLs.to_json}"
-    json_response report, report.image
+    videos_array.each do |elem|
+      report.video.create! base64Data: elem
+    end
+
+
+    json_response report, report.image, report.video
   end
 
   private
-
-  def array_to_json
-
-  end
 
   def set_aluno
     escola = Escola.find params[:escola_id]

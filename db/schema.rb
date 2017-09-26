@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925174927) do
+ActiveRecord::Schema.define(version: 20170926134905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,15 @@ ActiveRecord::Schema.define(version: 20170925174927) do
 
   create_table "avisos", force: :cascade do |t|
     t.string "titulo"
-    t.string "descrição"
     t.string "series"
     t.string "imagem"
     t.bigint "escola_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "descricao"
+    t.bigint "image_id"
     t.index ["escola_id"], name: "index_avisos_on_escola_id"
+    t.index ["image_id"], name: "index_avisos_on_image_id"
   end
 
   create_table "escolas", force: :cascade do |t|
@@ -62,6 +63,8 @@ ActiveRecord::Schema.define(version: 20170925174927) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "report_id"
+    t.bigint "aviso_id"
+    t.index ["aviso_id"], name: "index_images_on_aviso_id"
     t.index ["report_id"], name: "index_images_on_report_id"
   end
 
@@ -90,9 +93,11 @@ ActiveRecord::Schema.define(version: 20170925174927) do
   end
 
   add_foreign_key "alunos", "reports"
+  add_foreign_key "avisos", "images"
   add_foreign_key "escolas", "alunos"
   add_foreign_key "escolas", "avisos"
   add_foreign_key "escolas", "reports"
+  add_foreign_key "images", "avisos"
   add_foreign_key "reports", "images"
   add_foreign_key "reports", "videos"
   add_foreign_key "videos", "reports"
