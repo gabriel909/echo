@@ -7,7 +7,6 @@ class CreateEscolas < ActiveRecord::Migration[5.1]
       t.string :password_digest
       t.string :unidade
       t.references :aviso, foreign_key: true
-      t.references :report, foreign_key:true
       t.timestamps
     end
   end
