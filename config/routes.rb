@@ -45,7 +45,7 @@ Rails.application.routes.draw do
 
   #PUT
   #PUT Escola id
-  put '/escolas/:id', to: 'escols#update'
+  put '/escolas/:id', to: 'escolas#update'
 
   #PUT Aluno id
   put '/escolas/:escola_id/alunos/:aluno_id', to: 'alunos#update'
