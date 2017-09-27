@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926142623) do
+ActiveRecord::Schema.define(version: 20170927164037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,42 +18,43 @@ ActiveRecord::Schema.define(version: 20170926142623) do
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
     t.string "email"
-    t.string "password_digest"
     t.string "serie"
-    t.text "avatar"
-    t.bigint "report_id"
+    t.string "password_digest"
     t.bigint "escola_id"
+    t.bigint "report_id"
     t.index ["escola_id"], name: "index_alunos_on_escola_id"
     t.index ["report_id"], name: "index_alunos_on_report_id"
   end
 
   create_table "avisos", force: :cascade do |t|
+    t.string "titulo"
+    t.string "series"
+    t.string "descricao"
     t.bigint "image_id"
     t.bigint "escola_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["escola_id"], name: "index_avisos_on_escola_id"
     t.index ["image_id"], name: "index_avisos_on_image_id"
   end
 
   create_table "escolas", force: :cascade do |t|
-    t.string "nome"
     t.string "cnpj"
     t.string "email"
     t.string "password_digest"
     t.string "unidade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "aluno_id"
     t.bigint "aviso_id"
+    t.bigint "report_id"
+    t.bigint "aluno_id"
     t.index ["aluno_id"], name: "index_escolas_on_aluno_id"
     t.index ["aviso_id"], name: "index_escolas_on_aviso_id"
+    t.index ["report_id"], name: "index_escolas_on_report_id"
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "base64Data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "report_id"
+    t.string "image_data"
     t.bigint "aviso_id"
+    t.bigint "report_id"
     t.index ["aviso_id"], name: "index_images_on_aviso_id"
     t.index ["report_id"], name: "index_images_on_report_id"
   end
@@ -61,13 +62,11 @@ ActiveRecord::Schema.define(version: 20170926142623) do
   create_table "reports", force: :cascade do |t|
     t.string "categoria"
     t.string "status"
-    t.bigint "escola_id"
-    t.bigint "aluno_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "descricao"
+    t.string "descricao"
     t.bigint "image_id"
     t.bigint "video_id"
+    t.bigint "aluno_id"
+    t.bigint "escola_id"
     t.index ["aluno_id"], name: "index_reports_on_aluno_id"
     t.index ["escola_id"], name: "index_reports_on_escola_id"
     t.index ["image_id"], name: "index_reports_on_image_id"
@@ -75,21 +74,16 @@ ActiveRecord::Schema.define(version: 20170926142623) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "base64Data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "video_data"
     t.bigint "report_id"
     t.index ["report_id"], name: "index_videos_on_report_id"
   end
 
-  add_foreign_key "alunos", "escolas"
   add_foreign_key "alunos", "reports"
-  add_foreign_key "avisos", "escolas"
   add_foreign_key "avisos", "images"
   add_foreign_key "escolas", "alunos"
   add_foreign_key "escolas", "avisos"
-  add_foreign_key "images", "avisos"
+  add_foreign_key "escolas", "reports"
   add_foreign_key "reports", "images"
   add_foreign_key "reports", "videos"
-  add_foreign_key "videos", "reports"
 end

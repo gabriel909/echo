@@ -9,11 +9,11 @@ class ReportsController < ApplicationController
     report = @aluno.report.create! report_params
 
     images_array.each do |elem|
-      report.image.create! base64Data: elem
+      report.image.create! image_data: elem
     end
 
     videos_array.each do |elem|
-      report.video.create! base64Data: elem
+      report.video.create! video_data: elem
     end
 
 
