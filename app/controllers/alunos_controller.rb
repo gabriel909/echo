@@ -1,5 +1,5 @@
 class AlunosController < ApplicationController
-  before_action :authorize_request_aluno, except: :create
+  # before_action :authorize_request_aluno, except: :create
   before_action :set_aluno, only: [:show, :show_reports, :update, :delete]
   before_action :set_escola, only: [:create]
 

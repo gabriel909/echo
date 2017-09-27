@@ -1,5 +1,5 @@
 class EscolasController < ApplicationController
-  before_action :authorize_request_escola, except: :create
+  # before_action :authorize_request_escola, except: :create
   before_action :set_escola, only: [:show, :update, :show_reports]
   before_action :set_reports, only: [:show_reports, :show_reports_categories]
 
