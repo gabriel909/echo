@@ -1,7 +1,7 @@
 class AvisosController < ApplicationController
   before_action :set_escola
-  before_action :authorize_request_aluno, only: :index_alunos
-  before_action :authorize_request_aluno, except: :index_alunos
+  # before_action :authorize_request_aluno, only: :index_alunos
+  # before_action :authorize_request_aluno, except: :index_alunos
   before_action :set_aluno, only: :index_alunos
 
   #GET /escolas/:escola_id/avisos
