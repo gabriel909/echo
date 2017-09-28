@@ -11,7 +11,7 @@ class AvisosController < ApplicationController
 
   #GET /escolas/:escola_id/alunos/:aluno_id/avisos
   def index_alunos
-    avisos_alunos = @escola.aviso.where "series LIKE %?%", @aluno.serie
+    avisos_alunos = @escola.aviso.where "series LIKE ?", "%#{@aluno.serie}%"
     json_response avisos_alunos
   end
 

@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   #GET reports from aluno with id
   get '/escolas/:escola_id/alunos/:aluno_id/reports', to: 'alunos#show_reports'
 
+  #GET Avisos from alunos with id
+  get '/escolas/:escola_id/alunos/:aluno_id/avisos', to: 'avisos#index_alunos'
+
   #POST
   #POST Escola signup
   post '/escolas/signup', to: 'escolas#create'
