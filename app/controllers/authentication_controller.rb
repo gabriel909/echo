@@ -7,7 +7,7 @@ class AuthenticationController < ApplicationController
 
   def authenticate_aluno
     auth_token = AuthenticateUser.new(auth_params[:email], auth_params[:password]).call_aluno
-    json_response auth_token: auth_token
+    json_response auth_token
   end
 
   private

@@ -4,13 +4,15 @@ class AuthenticateUser
     @password = password
   end
 
-  #servie entry point
+  #service entry point
   def call_escola
-    JsonWebToken.encode escola_id: escola.id if escola
+    token = JsonWebToken.encode escola_id: escola.id if escola
+    { auth_token: token, escola: escola }
   end
 
   def call_aluno
-    JsonWebToken.encode aluno_id: aluno.id if aluno
+    token = JsonWebToken.encode aluno_id: aluno.id if aluno
+    { auth_token: token, aluno: aluno }
   end
 
   private

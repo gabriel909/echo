@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170927164037) do
   end
 
   create_table "escolas", force: :cascade do |t|
+    t.string "nome"
     t.string "cnpj"
     t.string "email"
     t.string "password_digest"
