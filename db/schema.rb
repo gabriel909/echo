@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927164037) do
+ActiveRecord::Schema.define(version: 20171123132847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20170927164037) do
     t.datetime "updated_at", null: false
     t.index ["escola_id"], name: "index_avisos_on_escola_id"
     t.index ["image_id"], name: "index_avisos_on_image_id"
+  end
+
+  create_table "blacklists", force: :cascade do |t|
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "escolas", force: :cascade do |t|

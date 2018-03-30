@@ -1,0 +1,281 @@
+=> Booting Puma
+=> Rails 5.1.4 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.10.0 (ruby 2.4.2-p198), codename: Russell's Teapot
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
+2017-11-17 16:10:47 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:10:47 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:10:47 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:10:57 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:10:57 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:10:57 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:01 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:01 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:01 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:01 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:06 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:06 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:06 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+2017-11-17 16:12:06 -0200: HTTP parse error, malformed request (): #<Puma::HttpParserError: Invalid HTTP format, parsing fails.>
+---
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2017-11-17 16:12:15 -0200 ===
+- Goodbye!
+Exiting
+=> Booting Puma
+=> Rails 5.1.4 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.10.0 (ruby 2.4.2-p198), codename: Russell's Teapot
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on ssl://*:3000?cert=/home/devecho/echo-api/fullchain1.pem&key=/home/devecho/echo-api/privkey1.pem&verify_mode=none
+Use Ctrl-C to stop
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2017-11-24 01:33:48 -0200 ===
+- Goodbye!
+Exiting
+=> Booting Puma
+=> Rails 5.1.4 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.10.0 (ruby 2.4.2-p198), codename: Russell's Teapot
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on ssl://*:3000?cert=/home/devecho/echo-api/fullchain1.pem&key=/home/devecho/echo-api/privkey1.pem&verify_mode=none
+Use Ctrl-C to stop
+Started GET "/escolas/11/reports" for 189.122.96.120 at 2017-11-24 01:34:30 -0200
+Started GET "/escolas/11/reports" for 189.122.96.120 at 2017-11-24 01:34:30 -0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EscolasController#show_reports as */*
+  Parameters: {"escola_id"=>"11"}
+Processing by EscolasController#show_reports as */*
+  Parameters: {"escola_id"=>"11"}
+  [1m[36mEscola Load (0.7ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (8.5ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (12.1ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReport Load (2.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" IN (SELECT "alunos"."id" FROM "alunos" WHERE "alunos"."escola_id" = $1)[0m  [["escola_id", 11]]
+  [1m[36mReport Load (2.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" IN (SELECT "alunos"."id" FROM "alunos" WHERE "alunos"."escola_id" = $1)[0m  [["escola_id", 11]]
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (5.7ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (1.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (1.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (1.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+no show reports escola
+  [1m[36mAluno Load (2.7ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAluno Load (1.5ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+no show reports escola
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (4.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 146ms (Views: 8.3ms | ActiveRecord: 70.7ms)
+
+
+  [1m[36mImage Load (3.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 137ms (Views: 12.2ms | ActiveRecord: 56.7ms)
+
+
+Started GET "/escolas/11/avisos" for 189.122.96.120 at 2017-11-24 01:34:35 -0200
+Processing by AvisosController#index as */*
+  Parameters: {"escola_id"=>"11"}
+  [1m[36mEscola Load (6.8ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAviso Load (0.4ms)[0m  [1m[34mSELECT "avisos".* FROM "avisos" WHERE "avisos"."escola_id" = $1[0m  [["escola_id", 11]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 89]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 87]]
+Completed 200 OK in 50ms (Views: 4.0ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/escolas/11/avisos" for 189.122.96.120 at 2017-11-24 01:35:09 -0200
+Processing by AvisosController#index as */*
+  Parameters: {"escola_id"=>"11"}
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAviso Load (0.2ms)[0m  [1m[34mSELECT "avisos".* FROM "avisos" WHERE "avisos"."escola_id" = $1[0m  [["escola_id", 11]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 89]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 87]]
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/escolas/11/reports" for 189.122.96.120 at 2017-11-24 01:35:10 -0200
+Processing by EscolasController#show_reports as */*
+  Parameters: {"escola_id"=>"11"}
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReport Load (0.9ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" IN (SELECT "alunos"."id" FROM "alunos" WHERE "alunos"."escola_id" = $1)[0m  [["escola_id", 11]]
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+no show reports escola
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 22ms (Views: 11.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/escolas/11/avisos" for 189.122.96.120 at 2017-11-24 01:35:17 -0200
+Processing by AvisosController#index as */*
+  Parameters: {"escola_id"=>"11"}
+  [1m[36mEscola Load (0.5ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (1.8ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAviso Load (5.8ms)[0m  [1m[34mSELECT "avisos".* FROM "avisos" WHERE "avisos"."escola_id" = $1[0m  [["escola_id", 11]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 89]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 87]]
+Completed 200 OK in 16ms (Views: 3.2ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/escolas" for 189.122.96.120 at 2017-11-24 01:36:06 -0200
+Processing by EscolasController#index as */*
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT "escolas".* FROM "escolas"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+2017-11-24 07:29:13 -0200: SSL error, peer: 139.82.220.163, peer cert: , #<Puma::MiniSSL::SSLError: OpenSSL error: error:1407609C:SSL routines:SSL23_GET_CLIENT_HELLO:http request - 336027804>
+Started POST "/escolas/login" for 139.82.222.245 at 2017-11-24 07:31:21 -0200
+Processing by AuthenticationController#authenticate_escola as */*
+  Parameters: {"email"=>"inosel@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"inosel@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+Unpermitted parameter: :authentication
+inosel@gmail.com and 123
+Unpermitted parameter: :authentication
+Unpermitted parameter: :authentication
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."email" = $1 LIMIT $2[0m  [["email", "inosel@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE Escola Load (0.0ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."email" = $1 LIMIT $2[0m  [["email", "inosel@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE Escola Load (0.0ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."email" = $1 LIMIT $2[0m  [["email", "inosel@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 436ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/escolas/11/reports" for 139.82.222.245 at 2017-11-24 07:31:25 -0200
+Processing by EscolasController#show_reports as */*
+  Parameters: {"escola_id"=>"11"}
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReport Load (0.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" IN (SELECT "alunos"."id" FROM "alunos" WHERE "alunos"."escola_id" = $1)[0m  [["escola_id", 11]]
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+no show reports escola
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 2.4ms)
+
+
+2017-11-24 07:32:58 -0200: SSL error, peer: 139.82.222.245, peer cert: , #<Puma::MiniSSL::SSLError: OpenSSL error: error:1407609C:SSL routines:SSL23_GET_CLIENT_HELLO:http request - 336027804>
+Started POST "/alunos/login" for 139.82.222.245 at 2017-11-24 07:33:51 -0200
+Processing by AuthenticationController#authenticate_aluno as */*
+  Parameters: {"password"=>"[FILTERED]", "email"=>"gabriel909392@gmail.com", "authentication"=>{"password"=>"[FILTERED]", "email"=>"gabriel909392@gmail.com"}}
+Unpermitted parameter: :authentication
+Unpermitted parameter: :authentication
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."email" = $1 LIMIT $2[0m  [["email", "gabriel909392@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."email" = $1 LIMIT $2[0m  [["email", "gabriel909392@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."email" = $1 LIMIT $2[0m  [["email", "gabriel909392@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."email" = $1 LIMIT $2[0m  [["email", "gabriel909392@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEscola Load (9.0ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 417ms (Views: 0.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/escolas/11/alunos/6/reports" for 139.82.222.245 at 2017-11-24 07:33:55 -0200
+Processing by AlunosController#show_reports as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aluno"=>{}}
+passei aqui authorize request aluno
+  [1m[36mAluno Load (0.4ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" = $1[0m  [["aluno_id", 6]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (7.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 50ms (Views: 22.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/escolas/11/alunos/6/reports" for 139.82.222.245 at 2017-11-24 07:34:01 -0200
+Processing by AlunosController#show_reports as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aluno"=>{}}
+passei aqui authorize request aluno
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" = $1[0m  [["aluno_id", 6]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/escolas/11/alunos/6/reports" for 139.82.222.245 at 2017-11-24 07:35:26 -0200
+Processing by AlunosController#show_reports as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aluno"=>{}}
+passei aqui authorize request aluno
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" = $1[0m  [["aluno_id", 6]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/escolas/11/alunos/6/reports" for 139.82.222.245 at 2017-11-24 07:35:31 -0200
+Processing by AlunosController#show_reports as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aluno"=>{}}
+passei aqui authorize request aluno
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" = $1[0m  [["aluno_id", 6]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 1.6ms)
+
+
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2017-11-24 09:09:07 -0200 ===
+- Goodbye!
+Exiting

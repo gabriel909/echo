@@ -1,0 +1,4 @@
+Puma starting in single mode...
+* Version 3.10.0 (ruby 2.4.2-p198), codename: Russell's Teapot
+* Min threads: 5, max threads: 5
+* Environment: development

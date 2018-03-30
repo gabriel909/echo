@@ -7,7 +7,8 @@ class AuthorizeApiRequest
   def call_escola
     { escola:
       user do
-        @escola ||= Escola.find decoded_auth_token[:escola_id] if decoded_auth_token
+        @escola ||= Escola.find decoded_auth_token[:escola_id] if decoded_auth_token && !is_blacklisted?
+        puts "PASSEI CALL ESCOLA"
       end
     }
   end
@@ -15,7 +16,7 @@ class AuthorizeApiRequest
   def call_aluno
     { aluno:
       user do
-        @aluno ||= Aluno.find decoded_auth_token[:aluno_id] if decoded_auth_token
+        @aluno ||= Aluno.find decoded_auth_token[:aluno_id] if decoded_auth_token && is_blacklisted?
       end
     }
   end
@@ -32,7 +33,13 @@ class AuthorizeApiRequest
     #handle record not found
   rescue ActiveRecord::RecordNotFound => e
     #raise custom error
-    raise ExceptionHandler::InvalidToken, "#{Message.invalide_token} #{e.message}"
+    raise ExceptionHandler::InvalidToken, "#{Message.invalid_token} #{e.message}"
+  end
+
+  def is_blacklisted?
+    token = Blacklist.find_by token: http_auth_header.to_s
+
+    raise ExceptionHandler::InvalidToken, Message.invalid_token if !token.nil?
   end
 
   #decode authentication token

@@ -1,6 +1,6 @@
 class EscolasController < ApplicationController
-  # before_action :authorize_request_escola, except: :create
-  before_action :set_escola, only: [:show, :update, :show_reports]
+  before_action :authorize_request_escola, except: [:create,:index]
+  before_action :set_escola_id, only: [:show, :update, :show_reports]
   before_action :set_reports, only: [:show_reports, :show_reports_categories]
 
   #POST
@@ -18,9 +18,10 @@ class EscolasController < ApplicationController
   #POST /escolas/signup
   def create
     @escola = Escola.create! escola_params
-    #TODO Auth token
 
-    json_response @escola
+    auth_token = AuthenticateUser.new(escola_params[:email], escola_params[:password]).call_escola
+
+    json_response auth_token
   end
 
   #DELETE /escolas/:id
@@ -34,14 +35,27 @@ class EscolasController < ApplicationController
   #PUT /escolas/:id
   def update
     delete_update do
-      @escola.update escola_params
+      @escola.update! escola_params
       json_response @escola
     end
   end
 
+  def logout_escola
+    LogoutUser.new(request.headers['Authorization']).call
+    head :no_content
+  end
+
   # GET /escolas/:escola_id/reports
   def show_reports
-    json_response @reports
+    report_array = @reports.to_a
+    report_image_array = []
+
+    for report in report_array
+      report_image_array << { report: report, image: report.image, aluno: report.aluno }
+    end
+
+    puts "no show reports escola"
+    json_response report_image_array
   end
 
   # GET /escolas/:escola_id/reports

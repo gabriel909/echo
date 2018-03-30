@@ -4,6 +4,10 @@ class ApplicationController < ActionController::API
 
   attr_reader :current_escola, :current_aluno
 
+  before_action :allow_cross_domain
+	
+  Rails.application.routes.default_url_options[:protocol] = 'https'
+
   private
 
   def authorize_request_escola
@@ -11,6 +15,11 @@ class ApplicationController < ActionController::API
   end
 
   def authorize_request_aluno
-    @current_aluno = (AuthorizeApiRequest.new(request.headers).call_aluno)[:aluno]
+     puts "passei aqui authorize request aluno"
+     @current_aluno = (AuthorizeApiRequest.new(request.headers).call_aluno)[:aluno]
+  end
+
+  def allow_cross_domain
+    response.headers['Access-Control-Allow-Origin'] = '*'
   end
 end

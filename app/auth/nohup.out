@@ -1,0 +1,99 @@
+=> Booting Puma
+=> Rails 5.1.4 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.10.0 (ruby 2.4.2-p198), codename: Russell's Teapot
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on ssl://*:3000?cert=/home/devecho/echo-api/fullchain1.pem&key=/home/devecho/echo-api/privkey1.pem&verify_mode=none
+Use Ctrl-C to stop
+Started GET "/escolas/11/alunos/6/reports" for 139.82.172.11 at 2017-11-24 15:15:11 -0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AlunosController#show_reports as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aluno"=>{}}
+passei aqui authorize request aluno
+  [1m[36mBlacklist Load (0.3ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJhbHVub19pZCI6NiwiZXhwIjoxNTQzMDc5NjUzfQ.PKJ0ToekEu5SQDIMTazNibtavItUDrDu6Z2xXWk46J0"], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.5ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mAluno Load (0.4ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."aluno_id" = $1[0m  [["aluno_id", 6]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 55]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 43]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 60]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 64]]
+  [1m[36mImage Load (5.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."report_id" = $1[0m  [["report_id", 65]]
+Completed 200 OK in 143ms (Views: 18.1ms | ActiveRecord: 52.4ms)
+
+
+Started GET "/escolas/11/alunos/6/avisos" for 139.82.172.11 at 2017-11-24 15:15:14 -0200
+Processing by AvisosController#index_alunos as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aviso"=>{}}
+  [1m[36mEscola Load (0.5ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+passei aqui authorize request aluno
+  [1m[36mBlacklist Load (0.6ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJhbHVub19pZCI6NiwiZXhwIjoxNTQzMDc5NjUzfQ.PKJ0ToekEu5SQDIMTazNibtavItUDrDu6Z2xXWk46J0"], ["LIMIT", 1]]
+ALUNO
+  [1m[36mAluno Load (14.1ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mAviso Load (0.5ms)[0m  [1m[34mSELECT "avisos".* FROM "avisos" WHERE "avisos"."escola_id" = $1 AND (series LIKE '%6%')[0m  [["escola_id", 11]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 89]]
+  [1m[36mImage Load (11.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 87]]
+Completed 200 OK in 71ms (Views: 6.8ms | ActiveRecord: 39.6ms)
+
+
+Started GET "/escolas/11/alunos/6/avisos" for 139.82.172.11 at 2017-11-24 15:15:18 -0200
+Processing by AvisosController#index_alunos as */*
+  Parameters: {"escola_id"=>"11", "aluno_id"=>"6", "aviso"=>{}}
+  [1m[36mEscola Load (0.4ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+passei aqui authorize request aluno
+  [1m[36mBlacklist Load (0.2ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJhbHVub19pZCI6NiwiZXhwIjoxNTQzMDc5NjUzfQ.PKJ0ToekEu5SQDIMTazNibtavItUDrDu6Z2xXWk46J0"], ["LIMIT", 1]]
+ALUNO
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."escola_id" = $1 AND "alunos"."id" = $2 LIMIT $3[0m  [["escola_id", 11], ["id", 6], ["LIMIT", 1]]
+  [1m[36mAviso Load (0.3ms)[0m  [1m[34mSELECT "avisos".* FROM "avisos" WHERE "avisos"."escola_id" = $1 AND (series LIKE '%6%')[0m  [["escola_id", 11]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 89]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."aviso_id" = $1[0m  [["aviso_id", 87]]
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 1.7ms)
+
+
+Started PUT "/escolas/11" for 139.82.172.11 at 2017-11-24 15:20:50 -0200
+Processing by EscolasController#update as */*
+  Parameters: {"id"=>"11", "nome"=>"", "cnpj"=>"", "email"=>"", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil, "auth_token"=>"eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8", "escola"=>{"id"=>"11", "nome"=>"", "cnpj"=>"", "email"=>"", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil}}
+  [1m[36mBlacklist Load (0.4ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8"], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :id, :password_digest, :aviso_id, :report_id, :aluno_id, :auth_token, :escola
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT "escolas".* FROM "escolas" WHERE (nome = '' AND unidade = 'botafogo')[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/escolas/11" for 139.82.172.11 at 2017-11-24 15:24:45 -0200
+Processing by EscolasController#update as */*
+  Parameters: {"id"=>"11", "nome"=>"", "cnpj"=>"", "email"=>"", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil, "auth_token"=>"eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8", "escola"=>{"id"=>"11", "nome"=>"", "cnpj"=>"", "email"=>"", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil}}
+  [1m[36mBlacklist Load (0.3ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8"], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :id, :password_digest, :aviso_id, :report_id, :aluno_id, :auth_token, :escola
+  [1m[36mEscola Load (0.2ms)[0m  [1m[34mSELECT "escolas".* FROM "escolas" WHERE (nome = '' AND unidade = 'botafogo')[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/escolas/11" for 139.82.172.11 at 2017-11-24 15:26:14 -0200
+Processing by EscolasController#update as */*
+  Parameters: {"id"=>"11", "nome"=>"", "cnpj"=>"", "email"=>"", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil, "auth_token"=>"eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8", "escola"=>{"id"=>"11", "nome"=>"", "cnpj"=>"", "email"=>"", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil}}
+  [1m[36mBlacklist Load (0.7ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8"], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.5ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :id, :password_digest, :aviso_id, :report_id, :aluno_id, :auth_token, :escola
+  [1m[36mEscola Load (0.6ms)[0m  [1m[34mSELECT "escolas".* FROM "escolas" WHERE (nome = '' AND unidade = 'botafogo')[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started PUT "/escolas/11" for 139.82.172.11 at 2017-11-24 15:27:02 -0200
+Processing by EscolasController#update as */*
+  Parameters: {"id"=>"11", "nome"=>"Andrews", "cnpj"=>"43144321", "email"=>"inosel@gmail.com", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil, "auth_token"=>"eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8", "escola"=>{"id"=>"11", "nome"=>"Andrews", "cnpj"=>"43144321", "email"=>"inosel@gmail.com", "password_digest"=>"[FILTERED]", "unidade"=>"botafogo", "aviso_id"=>nil, "report_id"=>nil, "aluno_id"=>nil}}
+  [1m[36mBlacklist Load (0.3ms)[0m  [1m[34mSELECT  "blacklists".* FROM "blacklists" WHERE "blacklists"."token" = $1 LIMIT $2[0m  [["token", "eyJhbGciOiJIUzI1NiJ9.eyJlc2NvbGFfaWQiOjExLCJleHAiOjE1NDMwNzg2MzB9.ftkwAdRE-Xfn4DsQWO4k4dAlnUQT-_GRrfNu4sEa9e8"], ["LIMIT", 1]]
+  [1m[36mEscola Load (0.3ms)[0m  [1m[34mSELECT  "escolas".* FROM "escolas" WHERE "escolas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+UPDATE!!!!!
+Unpermitted parameters: :id, :password_digest, :aviso_id, :report_id, :aluno_id, :auth_token, :escola
+  [1m[36mEscola Load (0.4ms)[0m  [1m[34mSELECT "escolas".* FROM "escolas" WHERE (nome = 'Andrews' AND unidade = 'botafogo')[0m
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2017-11-24 15:27:37 -0200 ===
+- Goodbye!
+Exiting

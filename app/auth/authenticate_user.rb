@@ -12,7 +12,7 @@ class AuthenticateUser
 
   def call_aluno
     token = JsonWebToken.encode aluno_id: aluno.id if aluno
-    { auth_token: token, aluno: aluno }
+    { auth_token: token, aluno: aluno, escola: aluno.escola.nome }
   end
 
   private

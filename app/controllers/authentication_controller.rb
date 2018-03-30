@@ -1,8 +1,9 @@
 class AuthenticationController < ApplicationController
   #return auth token once user is authenticated
   def authenticate_escola
+    puts "#{auth_params[:email]} and #{auth_params[:password]}"
     auth_token = AuthenticateUser.new(auth_params[:email], auth_params[:password]).call_escola
-    json_response auth_token: auth_token
+    json_response auth_token
   end
 
   def authenticate_aluno
